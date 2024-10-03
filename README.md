@@ -42,7 +42,7 @@ To use the Pascal's Triangle generator, simply run the script and provide the nu
 
 The program will print Pascal's Triangle up to the number of rows you specify inside the script.
 
-***Example***
+***For Example***
 
 If you modify the script to call `python3  0-pascal_triangle.py 5` and run the program, the output will look like this:
 
