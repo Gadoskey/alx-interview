@@ -16,5 +16,5 @@ def pascal_triangle(n):
         
         matrix.append(innerList) # Append the inner list to matrix
     
-    # Printing the result
-    print()
+    # Return matrix
+    return(matrix)
