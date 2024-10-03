@@ -5,16 +5,20 @@ def pascal_triangle(n):
         the Pascal's triangle of n. It returns an empty list if n <= 0
     """
     matrix = [] # A list of lists or outer list
-    for i in range(n):
-        innerList = [] #  Create an inner list 
-        for j in range(i + 1):
-            if j == 0 or j == i:  # First and last elements are always 1
-                innerList.append(1)
-            else:
-                # Sum the two elements from the previous row
-                innerList.append(matrix[i - 1][j - 1] + matrix[i - 1][j])
-        
-        matrix.append(innerList) # Append the inner list to matrix
+    
+    if (n <= 0):
+        return(matrix) # Return matrix - an empty list if n is less than or equals to 0
+    else:
+        for i in range(n):
+            innerList = [] #  Create an inner list 
+            for j in range(i + 1):
+                if j == 0 or j == i:  # First and last elements are always 1
+                    innerList.append(1)
+                else:
+                    # Sum the two elements from the previous row
+                    innerList.append(matrix[i - 1][j - 1] + matrix[i - 1][j])
+            
+            matrix.append(innerList) # Append the inner list to matrix
     
     # Return matrix
     return(matrix)
