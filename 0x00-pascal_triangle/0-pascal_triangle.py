@@ -10,7 +10,7 @@ def pascal_triangle(n):
     matrix = [] # A list of lists or outer list
     
     if n <= 0:
-        return(matrix) # Return matrix - an empty list if n is less than or equals to 0
+        return (matrix) # Return matrix - an empty list if n is less than or equals to 0
     for i in range(n):
         innerList = [] #  Create an inner list 
         for j in range(i + 1):
@@ -23,4 +23,4 @@ def pascal_triangle(n):
         matrix.append(innerList) # Append the inner list to matrix
     
     # Return matrix
-    return(matrix)
+    return (matrix)
