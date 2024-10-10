@@ -3,10 +3,13 @@
 Author: Yusuf Mustapha Opeyemi
 File: 0-lockboxes.py
 Function: canUnlockAll
-Description: This function determines if all boxes in a list of lists can be unlocked. 
-Each box may contain keys to other boxes. We start with box 0 unlocked and use the keys 
-found inside boxes to open others. The function returns True if all boxes can be opened, 
-else returns False.
+Description: This function determines
+  if all boxes in a list of lists can be unlocked.
+Each box may contain keys to other boxes.
+We start with box 0 unlocked and use the keys 
+  found inside boxes to open others.
+The function returns True if all boxes can be opened,
+  else returns False.
 """
 
 def canUnlockAll(boxes):
