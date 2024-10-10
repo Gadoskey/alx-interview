@@ -10,20 +10,19 @@ else returns False.
 """
 
 def canUnlockAll(boxes):
-    """
-        A func that determines if all boxes in a list of lists can be unlocked.
-    """
-    n = len(boxes)  # Total number of boxes
-    opened = [False] * n  # List to track which boxes have been opened
-    opened[0] = True  # Box 0 is always open
-    keys = [0]  # Start with the key to box 0
+    # Start with box 0 unlocked
+    unlocked = [False] * len(boxes)
+    unlocked[0] = True  # Box 0 is always unlocked
     
-    while keys:
-        key = keys.pop()  # Get the last key
-        if not opened[key]:  # If the box corresponding to the key is not open
-            opened[key] = True  # Mark the box as opened
-            for new_key in boxes[key]:  # Get keys from this box
-                if new_key < n and not opened[new_key]:  # If the key is valid and the box is not yet opened
-                    keys.append(new_key)  # Add this key to the list
-
-    return all(opened)  # Return True if all boxes are opened, else False
+    # A list of keys you currently have, starting with keys in box 0
+    keys = boxes[0]
+    
+    # Check which boxes can be unlocked with the keys you find
+    for key in keys:
+        if key < len(boxes) and not unlocked[key]:
+            unlocked[key] = True
+            # Add new keys from the newly unlocked box
+            keys.extend(boxes[key])
+    
+    # Return True if all boxes are unlocked
+    return all(unlocked)
