@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-  pascal triangle
+Author: Yusuf Mustapha Opeyemi
+File: 0-pascal_triangle.py
+Function: pascal_triangle
+Description: This function creates the pascal triangle
 """
 
 
