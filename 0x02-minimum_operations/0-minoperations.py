@@ -12,7 +12,7 @@ def minOperations(n: int) -> int:
     # If n is less than or equal to 1, return 0 as it's impossible
     if n <= 1:
         return 0
-    
+
     operations = 0
     divisor = 2
 
