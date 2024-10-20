@@ -3,7 +3,8 @@
 Author: Yusuf Mustapha Opeyemi
 File: 0-minoperations.py
 Function: minOperations
-Description: This function creates the pascal triangle
+Description: This function calculates the fewest number of operations
+            needed to result in exactly n H characters in the file
 """
 
 
