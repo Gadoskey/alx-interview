@@ -4,7 +4,7 @@ import signal
 """
 Author: Gadoskey
 File: 0-stats.py
-Function: minOperations
+Function: print_statistics and signal_handler
 Description: A script that reads stdin line by line and computes metrics
 """
 
