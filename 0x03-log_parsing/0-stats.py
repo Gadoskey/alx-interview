@@ -52,7 +52,7 @@ try:
 
         # Try to extract the status code and file size
         try:
-            status_code = parts[-2]  # Second last item in the line is the status code
+            status_code = parts[-2]  # Second last item
             file_size = int(parts[-1])  # Last item is the file size
         except (ValueError, IndexError):
             continue  # skip if status code or file size is invalid
