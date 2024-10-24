@@ -37,8 +37,10 @@ def signal_handler(sig, frame):
     print_statistics()
     sys.exit(0)
 
+
 # Register the signal handler for Ctrl + C
 signal.signal(signal.SIGINT, signal_handler)
+
 
 # Read input line by line from stdin
 try:
