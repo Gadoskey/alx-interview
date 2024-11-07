@@ -18,6 +18,7 @@ def is_safe(board, row, col):
             return False
     return True
 
+
 def solve_nqueens(n, col, board, solutions):
     """
     Recursively try to place queens in columns.
@@ -32,6 +33,7 @@ def solve_nqueens(n, col, board, solutions):
             board[col] = row
             solve_nqueens(n, col + 1, board, solutions)
             board[col] = -1  # Backtrack
+
 
 def main():
     """
@@ -60,6 +62,7 @@ def main():
 
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     main()
