@@ -1,0 +1,1 @@
+Solved the N Queens project to be updated later
