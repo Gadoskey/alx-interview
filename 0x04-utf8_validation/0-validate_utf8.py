@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Author: Yusuf Mustapha Opeyemi
+Author: Gadoskey
 Description: This module contains a function to validate if a given data set
 represents a valid UTF-8 encoding.
 """
