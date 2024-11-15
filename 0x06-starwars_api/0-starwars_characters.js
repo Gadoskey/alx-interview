@@ -14,7 +14,6 @@ function fetchMovieCharacters(movieId) {
   // Fetch movie data
   request(url, (error, response, body) => {
     if (error) {
-      
       console.error("Error:", error);
       return;
     }
@@ -25,19 +24,28 @@ function fetchMovieCharacters(movieId) {
 
     const movieData = JSON.parse(body);
 
-    // Iterate through each character URL and fetch the character name
-    movieData.characters.forEach((characterUrl) => {
-      request(characterUrl, (charError, charResponse, charBody) => {
-        if (charError) {
-          console.error("Error fetching character details:", charError);
-          return;
-        }
-        if (charResponse.statusCode === 200) {
-          const characterData = JSON.parse(charBody);
-          console.log(characterData.name);
-        }
+    // Map each character URL to a promise that fetches the character's name
+    const characterPromises = movieData.characters.map((characterUrl) => {
+      return new Promise((resolve, reject) => {
+        request(characterUrl, (charError, charResponse, charBody) => {
+          if (charError) {
+            reject("Error fetching character details: " + charError);
+          } else if (charResponse.statusCode === 200) {
+            const characterData = JSON.parse(charBody);
+            resolve(characterData.name);
+          } else {
+            reject("Error: Character not found");
+          }
+        });
       });
     });
+
+    // Resolve all promises in order and print each character name
+    Promise.all(characterPromises)
+      .then((characterNames) => {
+        characterNames.forEach((name) => console.log(name));
+      })
+      .catch((err) => console.error(err));
   });
 }
 
