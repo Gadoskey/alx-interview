@@ -6,19 +6,19 @@ Description: This script fetches and prints all character names
   The Movie ID is passed as a command-line argument.
 */
 
-const request = require("request");
+const request = require('request');
 
-function fetchMovieCharacters(movieId) {
+function fetchMovieCharacters (movieId) {
   const url = `https://swapi.dev/api/films/${movieId}/`;
 
   // Fetch movie data
   request(url, (error, response, body) => {
     if (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
       return;
     }
     if (response.statusCode !== 200) {
-      console.error("Error: Movie not found or invalid Movie ID");
+      console.error('Error: Movie not found or invalid Movie ID');
       return;
     }
 
@@ -29,12 +29,12 @@ function fetchMovieCharacters(movieId) {
       return new Promise((resolve, reject) => {
         request(characterUrl, (charError, charResponse, charBody) => {
           if (charError) {
-            reject("Error fetching character details: " + charError);
+            reject('Error fetching character details: ' + charError);
           } else if (charResponse.statusCode === 200) {
             const characterData = JSON.parse(charBody);
             resolve(characterData.name);
           } else {
-            reject("Error: Character not found");
+            reject('Error: Character not found');
           }
         });
       });
@@ -53,7 +53,7 @@ function fetchMovieCharacters(movieId) {
 const movieId = process.argv[2];
 
 if (!movieId) {
-  console.log("Usage: ./script.js <Movie ID>");
+  console.log('Usage: ./script.js <Movie ID>');
 } else {
   fetchMovieCharacters(movieId);
 }
