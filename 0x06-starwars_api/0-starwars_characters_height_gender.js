@@ -35,8 +35,8 @@ function fetchMovieCharacters (movieId) {
             const characterData = JSON.parse(charBody);
             resolve({
               name: characterData.name,
-              skin_colour: characterData.skin_colour,
-              eye_colour: characterData.eye_colour
+              skin_color: characterData.skin_color,
+              eye_color: characterData.eye_color
             });
           } else {
             reject(new Error('Error: Character not found'));
@@ -52,8 +52,8 @@ function fetchMovieCharacters (movieId) {
         characters.forEach((character) => {
           console.log("**** **** **** ****");
           console.log(character.name);
-          console.log(character.skin_colour);
-          console.log(character.eye_colour);
+          console.log(character.skin_color);
+          console.log(character.eye_color);
           console.log("**** **** **** ****");
         });
       })
