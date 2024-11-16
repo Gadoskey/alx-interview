@@ -1,4 +1,4 @@
-#!usr/bin/bash/node
+#!usr/bin/node
 
 /*
   Author: Yusuf Mustapha Opeyemi
