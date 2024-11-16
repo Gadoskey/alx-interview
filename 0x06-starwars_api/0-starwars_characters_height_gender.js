@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
 Author: Yusuf Mustapha Opeyemi
-Description: This script fetches and prints all character names, gender, and height
+Description: This script fetches and prints all character names, skin_color, and hair_color
   from a specified Star Wars movie using the Star Wars API.
   The Movie ID is passed as a command-line argument.
   Playing with API
