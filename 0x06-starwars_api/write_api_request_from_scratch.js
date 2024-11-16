@@ -71,12 +71,12 @@ function fetchPlanetsData(id) {
         planets.forEach((planet) => {
           console.log(`Planet: ${i}`);
           console.log(`Name: ${planet.name}`);
-          console.log(`SKin Color: ${planet.diameter}`);
-          console.log(`Eye Colour: ${planet.climate}`);
-          console.log(`Eye Colour: ${planet.gravity}`);
-          console.log(`Eye Colour: ${planet.terrain}`);
-          console.log(`Eye Colour: ${planet.surface_water}`);
-          console.log(`Eye Colour: ${planet.population}`);
+          console.log(`Diameter: ${planet.diameter}`);
+          console.log(`Climate: ${planet.climate}`);
+          console.log(`Gravity: ${planet.gravity}`);
+          console.log(`Terrain: ${planet.terrain}`);
+          console.log(`Surface: ${planet.surface_water}`);
+          console.log(`Population: ${planet.population}`);
           console.log("**** **** **** ****");
           i++;
         });
