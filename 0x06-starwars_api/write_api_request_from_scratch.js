@@ -85,11 +85,11 @@ function fetchPlanetsData(id) {
   });
 }
 
-  // Get the Movie ID from the command line arguments
-  const id = process.argv[2];
+// Get the Movie ID from the command line arguments
+const id = process.argv[2];
 
-  if (!id) {
-    console.log("Usage: ./script.js <Movie ID>");
-  } else {
-    fetchPlanetsData(id);
-  }
+if (!id) {
+  console.log("Usage: ./script.js <Movie ID>");
+} else {
+  fetchPlanetsData(id);
+}
