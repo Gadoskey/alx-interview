@@ -10,7 +10,7 @@
 
 const request = require("request");
 
-request("https://portal.uniabuja.edu.ng/index.php", (error, response, body) => {
+request("http://studentportal.unilag.edu.ng/login", (error, response, body) => {
   if (error) {
     console.error(error);
   }
