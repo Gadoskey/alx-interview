@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /*
 Author: Yusuf Mustapha Opeyemi
-Description: This script fetches and prints all character names, gender and height
+Description: This script fetches and prints all character names, gender, and height
   from a specified Star Wars movie using the Star Wars API.
   The Movie ID is passed as a command-line argument.
   Playing with API
@@ -25,7 +25,7 @@ function fetchMovieCharacters(movieId) {
 
     const movieData = JSON.parse(body);
 
-    // Map each character URL to a promise that fetches the character's name
+    // Map each character URL to a promise that fetches the character's details
     const characterPromises = movieData.characters.map((characterUrl) => {
       return new Promise((resolve, reject) => {
         request(characterUrl, (charError, charResponse, charBody) => {
@@ -33,11 +33,11 @@ function fetchMovieCharacters(movieId) {
             reject(new Error("Error fetching character details: " + charError));
           } else if (charResponse.statusCode === 200) {
             const characterData = JSON.parse(charBody);
-            resolve(
-              characterData.name,
-              characterData.height,
-              characterData.gender
-            );
+            resolve({
+              name: characterData.name,
+              height: characterData.height,
+              gender: characterData.gender,
+            });
           } else {
             reject(new Error("Error: Character not found"));
           }
@@ -45,7 +45,7 @@ function fetchMovieCharacters(movieId) {
       });
     });
 
-    // Resolve all promises in order and print each character name
+    // Resolve all promises and print each character's details
     Promise.all(characterPromises)
       .then((characters) => {
         characters.forEach((character) => {
