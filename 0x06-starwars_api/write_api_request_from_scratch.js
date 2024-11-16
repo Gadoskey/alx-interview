@@ -77,7 +77,7 @@ function fetchPlanetsData(id) {
           console.log(`Terrain: ${planet.terrain}`);
           console.log(`Surface: ${planet.surface_water}`);
           console.log(`Population: ${planet.population}`);
-          console.log("**** **** **** ****");
+          console.log(`End of Planet ${i}`);
           i++;
         });
       })
