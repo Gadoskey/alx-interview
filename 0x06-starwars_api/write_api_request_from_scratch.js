@@ -65,7 +65,7 @@ function fetchPlanetsData(id) {
 
     // iterate through planetPromises and print data
 
-    let i = 0;
+    let i = 1;
     Promise.all(planetPromises)
       .then((planets) => {
         planets.forEach((planet) => {
