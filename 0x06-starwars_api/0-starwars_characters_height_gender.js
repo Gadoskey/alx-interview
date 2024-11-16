@@ -33,7 +33,11 @@ function fetchMovieCharacters(movieId) {
             reject(new Error("Error fetching character details: " + charError));
           } else if (charResponse.statusCode === 200) {
             const characterData = JSON.parse(charBody);
-            resolve(characterData.name, characterData.height, characterData.gender);
+            resolve(
+              characterData.name,
+              characterData.height,
+              characterData.gender
+            );
           } else {
             reject(new Error("Error: Character not found"));
           }
@@ -43,10 +47,13 @@ function fetchMovieCharacters(movieId) {
 
     // Resolve all promises in order and print each character name
     Promise.all(characterPromises)
-      .then((characterNames, characterHeight, characterGender) => {
-        characterNames.forEach((name) => console.log(name));
-        characterHeight.forEach((height) => console.log(height));
-        characterGender.forEach((gender) => console.log(gender));
+      .then((characters) => {
+        characters.forEach((character) => {
+          console.log(`Name: ${character.name}`);
+          console.log(`Height: ${character.height}`);
+          console.log(`Gender: ${character.gender}`);
+          console.log("----");
+        });
       })
       .catch((err) => console.error(err));
   });
