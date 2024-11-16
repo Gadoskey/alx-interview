@@ -90,6 +90,6 @@ function fetchPlanetsData(id) {
   if (!id) {
     console.log("Usage: ./script.js <Movie ID>");
   } else {
-    fetchMovieCharacters(id);
+    fetchPlanetsData(id);
   }
 }
