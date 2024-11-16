@@ -83,6 +83,7 @@ function fetchPlanetsData(id) {
       })
       .catch((err) => console.error(err));
   });
+}
 
   // Get the Movie ID from the command line arguments
   const id = process.argv[2];
@@ -92,4 +93,3 @@ function fetchPlanetsData(id) {
   } else {
     fetchPlanetsData(id);
   }
-}
