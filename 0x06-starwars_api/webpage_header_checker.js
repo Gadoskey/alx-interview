@@ -15,7 +15,7 @@ request("https://example.com/api", (error, response, body) => {
     console.error(error);
   }
   if ((response.statusCode !== 200)) {
-    console.errro("Error fetching details");
+    console.errror("Error fetching details");
   }
   console.log(response.headers["content-type"]);
   console.log(body);
