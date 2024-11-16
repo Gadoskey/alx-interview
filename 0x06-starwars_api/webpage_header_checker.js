@@ -10,7 +10,7 @@
 
 const request = require("request");
 
-request("https://example.com/api", (error, response, body) => {
+request("https://gadoski.tech", (error, response, body) => {
   if (error) {
     console.error(error);
   }
