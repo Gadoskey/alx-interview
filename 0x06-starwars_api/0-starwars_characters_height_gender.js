@@ -50,10 +50,9 @@ function fetchMovieCharacters (movieId) {
     Promise.all(characterPromises)
       .then((characters) => {
         characters.forEach((character) => {
-          console.log("**** **** **** ****");
-          console.log(character.name);
-          console.log(character.skin_color);
-          console.log(character.eye_color);
+          console.log(`Name: ${character.name}`);
+          console.log(`SKin Color: ${character.skin_color}`);
+          console.log(`Eye Colour: ${character.eye_color}`);
           console.log("**** **** **** ****");
         });
       })
