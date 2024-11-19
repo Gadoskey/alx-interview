@@ -82,4 +82,10 @@ def rotate_2d_matrix(matrix):
     new value of matrix[i][j], which isn't the desired behavior.
     We're losing the original value of matrix[i][j]
     before it can be assigned to matrix[j][i].
+
+    Conclusion:
+      Simultaneous assignment (using the tuple syntax) is correct
+      and ensures that the values are swapped without losing any data.
+      Sequential assignment would lead to errors because
+      the second value is overwritten before the swap can occur.
 """
