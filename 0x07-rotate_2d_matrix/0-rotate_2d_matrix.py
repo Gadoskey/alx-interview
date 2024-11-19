@@ -46,7 +46,7 @@ def rotate_2d_matrix(matrix):
     """
     n = len(matrix)
 
-    # Transpose the matrix manually
+    # Transpose the matrix manually using Simultaneous Assignment
     # In other instances you can use numpy though, Quite easier to use
     for i in range(n):
         for j in range(i + 1, n):
@@ -64,4 +64,22 @@ def rotate_2d_matrix(matrix):
     the transpose step helps "flip" the matrix over its diagonal,
     and then reversing the rows completes the 90-degree rotation.
     This is why transposing is a key step
+
+    Why simultaneous assignment was used instead of sequential:
+
+    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+            VS
+
+    matrix[i][j] = matrix[j][i]
+    matrix[j][i] = matrix[i][j]
+
+    Here's the issue:
+
+    In the second line, we're trying to assign matrix[j][i] = matrix[i][j]
+    after the first assignment has already changed matrix[i][j].
+    This would overwrite the value of matrix[j][i] with the
+    new value of matrix[i][j], which isn't the desired behavior.
+    We're losing the original value of matrix[i][j]
+    before it can be assigned to matrix[j][i].
 """
