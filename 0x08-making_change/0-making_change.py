@@ -5,6 +5,7 @@ Desc: An algorithm that determines the fewest
 number of coins needed to meet a given amount total.
 """
 
+
 def makeChange(coins, total):
     """
     Returns the fewest number of coins needed to meet total.
